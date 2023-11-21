@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-6">
+    <p>User</p>
+    <p>Home / User</p>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Username</th>
+          <th scope="col">Joined Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let user of userDetails"
+          (click)="setSelectedUser(user)"
+          [ngClass]="user.id === userDetail.id ? 'table-primary' : ''"
+        >
+          <th scope="row">{{ user.id }}</th>
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.joinedAt }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-6">
+    <p>Address</p>
+    <div class="" *ngFor="let address of userDetail.addressList">
+      <div>
+        <p>Address</p>
+        <p>:</p>
+        <p>{{ address.address }}</p>
+      </div>
+      <div>
+        <p>City</p>
+        <p>:</p>
+        <p>{{ address.city }}</p>
+      </div>
+      <div>
+        <p>Pincode</p>
+        <p>:</p>
+        <p>{{ address.zipcode }}</p>
+      </div>
+    </div>
+  </div>
+</div>
