@@ -13,7 +13,9 @@ export class CategoriesTableComponent {
   @Output() deleteEmitter = new EventEmitter<number | undefined>();
 
   onEdit(category: Category) {
-    this.editEmitter.emit(category);
+    // this.editEmitter.emit(category);
+    let newObject = { id: category.id, title: category.title };
+    this.editEmitter.emit(newObject);
   }
 
   onDelete(id: number | undefined) {

@@ -3,7 +3,6 @@ import { Form } from "@angular/forms";
 import { AnimationOptions } from "ngx-lottie";
 import { AppResponse } from "src/app/model/appResponse";
 import { Login } from "src/app/model/login";
-import { AppUser } from "src/app/model/appUser";
 import { AuthService } from "src/app/service/auth.service";
 
 @Component({

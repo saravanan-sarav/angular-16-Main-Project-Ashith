@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { AnimationOptions } from "ngx-lottie";
 import { UserDetail } from "src/app/model/user-detail";
 import { UserService } from "src/app/service/user.service";
 
@@ -8,6 +9,9 @@ import { UserService } from "src/app/service/user.service";
 })
 export class AdminUserComponent implements OnInit {
   error: string = "";
+  options: AnimationOptions = {
+    path: "/assets/no_items.json",
+  };
   userDetails: UserDetail[] = [];
   userDetail: UserDetail = {
     id: 0,

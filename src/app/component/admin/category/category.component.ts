@@ -10,8 +10,6 @@ export class AdminCategoryComponent implements OnInit {
   error: string = "";
   INITIAL_CATEGORY: Category = { id: 0, title: "" };
 
-  emitterValue=false;
-
   categories: Category[] = [];
   categoryModel: Category = this.INITIAL_CATEGORY;
 
@@ -30,10 +28,6 @@ export class AdminCategoryComponent implements OnInit {
   }
 
   onSubmit(form: any) {
-    console.log(form.value);
-    console.log(this.categoryModel);
-  
-
     if (this.categoryModel.id === 0) {
       this.categoryService
         .postCategory({ title: this.categoryModel.title })
@@ -43,10 +37,7 @@ export class AdminCategoryComponent implements OnInit {
             this.categoryModel = this.INITIAL_CATEGORY;
           },
           error: (err) => {
-            let message: string = err?.error?.error?.message;
-            this.error = message.includes(",")
-              ? message.split(",")[0]
-              : message;
+            console.log(err?.error?.error?.message);
           },
         });
     } else {
@@ -56,11 +47,7 @@ export class AdminCategoryComponent implements OnInit {
           this.categoryModel = this.INITIAL_CATEGORY;
         },
         error: (err) => {
-          let message: string = err?.error?.error?.message;
-          this.error =
-            message != null && message.includes(",")
-              ? message.split(",")[0]
-              : message;
+          console.log(err?.error?.error?.message);
         },
       });
     }
@@ -71,24 +58,15 @@ export class AdminCategoryComponent implements OnInit {
   }
 
   onDelete(id: number | undefined) {
-    console.log(id);
     if (id !== undefined) {
       this.categoryService.deleteCategory(id).subscribe({
         next: (response: any) => {
           this.categories = response.data;
         },
         error: (err) => {
-          let message: string = err?.error?.error?.message;
-          this.error =
-            message != null && message.includes(",")
-              ? message.split(",")[0]
-              : message;
+          console.log(err?.error?.error?.message);
         },
       });
     }
-  }
-
-  change():boolean{
-    return  this.emitterValue=true;
   }
 }

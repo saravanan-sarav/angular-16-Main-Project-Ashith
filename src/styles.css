@@ -23,18 +23,18 @@
 
 body {
   font-family: "Exo 2", sans-serif;
-  background-color: var(--primary-900);
+  background-color: var(--primary-700);
   color: var(--primary-100);
 }
 
 /* text */
 .text-primary {
-  color: var(--primary-500) !important;
+  color: var(--primary-200) !important;
 }
 
 /* background */
 .bg-primary {
-  background-color: var(--primary-600) !important;
+  background-color: var(--primary-900) !important;
 }
 
 /* button */
@@ -44,7 +44,7 @@ body {
 
 .btn-primary {
   color: var(--secondary-100);
-  background: var(--primary-500);
+  background: var(--primary-900);
   border: none;
 }
 
@@ -83,11 +83,12 @@ body {
 /* form */
 .form-control,
 .form-control:focus {
-  color: var(--primary-500);
+  color: var(--primary-900);
+  font-weight: 600;
   background-color: var(--bs-body-bg);
   border-color: var(--primary-500);
   outline: 0;
-  box-shadow: 0 0 0 0.25rem var(--primary-300);
+  /* box-shadow: 0 0 0 0.25rem var(--primary-300); */
 }
 
 .form-label {
@@ -100,7 +101,7 @@ body {
 
 /* background color */
 .bg-body-tertiary {
-  background-color: var(--primary-100) !important;
+  background-color: var(--primary-900) !important;
 }
 
 /* Custom */
@@ -117,8 +118,8 @@ body {
 }
 
 .nav-item {
-  color: var(--primary-700) !important;
-  background-color: var(--primary-100);
+  color: var(--primary-100) !important;
+  /* background-color: var(--primary-100); */
 }
 
 .nav-item:hover {
@@ -170,5 +171,33 @@ body {
 }
 
 .bg-primary-subtle {
-  background-color: var(--primary-900)!important;
+  background-color: var(--primary-900) !important;
+}
+
+.table-dark {
+  --bs-table-bg: var(--primary-900) !important;
+}
+
+.table-primary {
+  --bs-table-bg: var(--primary-500) !important;
+  --bs-table-border-color: none !important;
+}
+
+.table > :not(caption) > * > * {
+  color: var(--primary-100) !important;
+  border-bottom-width: 0;
+}
+
+.table-hover > tbody > tr:hover > * {
+  --bs-table-bg-state: var(--primary-300);
+  color: var(--primary-900) !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-color-type: var(--bs-table-striped-color);
+  --bs-table-bg-type: var(--primary-600);
+}
+
+.modal-content {
+  background-color: var(--primary-700) !important;
 }

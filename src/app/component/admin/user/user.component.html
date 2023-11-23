@@ -1,14 +1,13 @@
-<div class="row">
+<div class="row m-2 my-4">
   <div class="col-6">
-    <p>User</p>
-    <p>Home / User</p>
-    <table class="table table-bordered table-hover">
+    <p class="fs-3">User</p>
+    <table class="table table-dark table-hover table-striped">
       <thead>
         <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Name</th>
-          <th scope="col">Username</th>
-          <th scope="col">Joined Date</th>
+          <th scope="col" class="fw-semibold">Id</th>
+          <th scope="col" class="fw-semibold w-55">Name</th>
+          <th scope="col" class="fw-semibold w-25">Username</th>
+          <th scope="col" class="fw-semibold w-25">Joined Date</th>
         </tr>
       </thead>
       <tbody>
@@ -25,23 +24,31 @@
       </tbody>
     </table>
   </div>
-  <div class="col-6">
-    <p>Address</p>
-    <div class="" *ngFor="let address of userDetail.addressList">
-      <div>
-        <p>Address</p>
-        <p>:</p>
-        <p>{{ address.address }}</p>
-      </div>
-      <div>
-        <p>City</p>
-        <p>:</p>
-        <p>{{ address.city }}</p>
-      </div>
-      <div>
-        <p>Pincode</p>
-        <p>:</p>
-        <p>{{ address.zipcode }}</p>
+  <div class="col-6 px-4">
+    <p class="fs-3">Address</p>
+    <div *ngIf="userDetail.addressList.length === 0">
+      <ng-lottie [options]="options"></ng-lottie>
+    </div>
+    <div *ngIf="userDetail.addressList.length > 0">
+      <div
+        class="d-flex flex-column bg-primary p-4"
+        *ngFor="let address of userDetail.addressList"
+      >
+        <div class="d-flex">
+          <p class="w-25">Address</p>
+          <p class="px-2">:</p>
+          <p>{{ address.address }}</p>
+        </div>
+        <div class="d-flex">
+          <p class="w-25">City</p>
+          <p class="px-2">:</p>
+          <p>{{ address.city }}</p>
+        </div>
+        <div class="d-flex">
+          <p class="w-25">Pincode</p>
+          <p class="px-2">:</p>
+          <p>{{ address.zipcode }}</p>
+        </div>
       </div>
     </div>
   </div>
